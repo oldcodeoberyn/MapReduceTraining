@@ -17,7 +17,7 @@ import java.io.IOException;
 public class TemperatureReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 
   @Override
-  protected void reduce(final Text key, final Iterable<IntWritable> values, final Context context) throws IOException, InterruptedException {
+  public void reduce(final Text key, final Iterable<IntWritable> values, final Context context) throws IOException, InterruptedException {
     int sumOfTemperatures = 0;
     int nbValues = 0;
     for (IntWritable temperature : values) {
